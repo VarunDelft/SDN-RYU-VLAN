@@ -1,0 +1,35 @@
+
+#Please Paste the three variables (port_vlan,access,trunk) for a particular topology under #GLOBAL VARIABLES in the VLAN_8021Q.py file. The corresponding topology files are
+provided in the /Custom Topologies folder.
+
+
+
+VLAN ONLY WITH SINGLE TRUNK LINE (For Use with 2sw-4host.py)
+
+port_vlan = {1:{1:[10],2:[20],3:[10,20]},2:{1:[10],2:[20],3:[10,20]}}     #port_vlan[a][b]=c => 'a'= dpid, 'b'= port number,'c'= VLAN ID
+									
+access= {1:[1,2],2:[1,2]}			#access[a]=[B] => 'a' = dpid ,'[B]'=List of ports configured as Access Ports
+
+trunk = {1:[3],2:[3]}				#trunk[a]=[B] => 'a' = dpid ,'[B]'=List of ports configured as Trunk Ports
+-------------------------------------------------------------------------------------------------------------------------------------------
+VLAN ONLY NETWORK WITH MULTI TRUNK LINES (For use with MultiTrunk.py).
+
+port_vlan = {1:{1:[10],2:[20],3:[30],4:[10,20,30]},2:{1:[10],2:[40],3:[10,20,30],4:[20,40],5:[10,30]},3:{1:[20],2:[40],3:[40],4:[20,40]}, 4:{1:[30],2:[10],3:[10,30]} }                                        #port_vlan[a][b]=c => 'a'= dpid, 'b'= port number,'c'= VLAN ID
+									
+access= {1:[1,2,3],2:[1,2],3:[1,2,3],4:[1,2]}			#access[a]=[B] => 'a' = dpid ,'[B]'=List of ports configured as Access Ports
+
+trunk = {1:[4],2:[3,4,5],3:[4],4:[3]}				#trunk[a]=[B] => 'a' = dpid ,'[B]'=List of ports configured as Trunk Ports
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+VLAN HYBRID TOPOLOGY (For use with Hybrid_VLAN.py)
+
+port_vlan = {2:{3:[" "],1:[30],2:[20],4:[20,30]},3:{4:[20,30],1:[30],2:[20],3:[" "]}}  #port_vlan[a][b]=c => 'a'= dpid, 'b'= port number,'c'= VLAN ID
+									
+access= {2:[1,2],3:[1,2]}			#access[a]=[B] => 'a' = dpid ,'[B]'=List of ports configured as Access Ports
+
+trunk = {2:[4],3:[4]}				#trunk[a]=[B] => 'a' = dpid ,'[B]'=List of ports configured as Trunk Ports
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+
